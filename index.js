@@ -1,33 +1,30 @@
 var express = require("express"),
     app = express(),
-    bodyParser  = require("body-parser");
+    bodyParser = require("body-parser");
 
 
 app.use(bodyParser.json());
 
 var router = express.Router();
 
-router.post('/test/', function(req, res) {
-   console.log(req.body);
-   res.sendStatus(200);
+router.post('/', function(req, res) {
+    console.log(req.body);
+    res.json("I'm working, I'm a test API, be careful");
 });
 
-router.post('/test/', function(req, res) {
-   console.log(req.body);
-   res.sendStatus(200);
-});
+
 
 router.post('/metrics/', function(req, res) {
-  //console.log("METRICS------------------------------");
-   //console.log(req.body);
-   res.sendStatus(200);
+    console.log("METRICS------------------------------");
+    console.log(req.body);
+    res.sendStatus(200);
 });
 
 
 router.post('/state/', function(req, res) {
-  console.log("STATES------------------------------");
-   console.log(req.body);
-   res.sendStatus(200);
+    console.log("STATES------------------------------");
+    console.log(req.body);
+    res.sendStatus(200);
 });
 
 
@@ -35,5 +32,5 @@ router.post('/state/', function(req, res) {
 app.use(router);
 
 app.listen(3000, function() {
-  console.log("Node server running on http://localhost:3000");
+    console.log("Node server running on http://localhost:3000");
 });
