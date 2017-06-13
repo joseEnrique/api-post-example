@@ -7,7 +7,7 @@ app.use(bodyParser.json());
 
 var router = express.Router();
 
-router.post('/', function(req, res) {
+router.get('/', function(req, res) {
     console.log(req.body);
     res.json("I'm working, I'm a test API, be careful");
 });
